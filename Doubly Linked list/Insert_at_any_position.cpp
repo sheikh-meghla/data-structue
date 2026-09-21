@@ -27,11 +27,19 @@ void print_forward(Node* head){
 
 }
 
-void Insert_at_head(Node* &head,int val){
+void Insert_at_any_pos(Node* &head, int idx, int val){
     Node* newnode = new Node(val);
-    newnode->next = head;
-    head->prev = newnode;
-    head = newnode;
+    Node* tmp = head;
+
+    for(int i = 1; i < idx; i++){
+        tmp = tmp->next;    
+    }
+
+    newnode->next = tmp->next;
+    tmp->next->prev = newnode;
+    tmp->next = newnode;
+    newnode->prev = tmp;
+    
 
 }
 
@@ -39,16 +47,16 @@ void Insert_at_head(Node* &head,int val){
 int main() {
     Node* head = new Node(10);
     Node* a = new Node(20);
-    Node* b = new Node(30);
+    Node* tail = new Node(30);
 
     head->next = a;
     a->prev = head;
     
-    a->next = b;
-    b->prev = a;
+    a->next = tail;
+    tail->prev = a;
 
+    Insert_at_any_pos(head,2,100);
 
-    Insert_at_head(head,100);
     print_forward(head);
     return 0;
 }
