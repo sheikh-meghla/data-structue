@@ -1,0 +1,69 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* prev;
+
+    Node(int val) {
+        this->val = val;
+        this->next = NULL;
+        this->prev = NULL;
+    }
+};
+
+void print_forward(Node* head,int x,int y) {
+    Node* tmp = head;
+    long long sum = 0;
+    int count = 0;
+    while (tmp != NULL) {
+        
+        if (tmp->val % 2 == 0)
+        {
+            count++;
+        }
+        
+        tmp = tmp->next;
+    }
+    cout << count << endl;
+
+}
+
+void Insert_at_tail(Node* &head, Node* &tail, int val) {
+    Node* newnode = new Node(val);
+
+    if (head == NULL) {
+        head = newnode;
+        tail = newnode;
+        return;
+    }
+
+    tail->next = newnode;
+    newnode->prev = tail;
+    tail = newnode;
+}
+
+int main() {
+    Node* head = NULL;
+    Node* tail = NULL;
+    int x,y;
+    cin >> x >> y;
+    int val;
+
+    while (true) {
+        cin >> val;
+
+        if (val == -1) {
+            break;
+        }
+
+        Insert_at_tail(head, tail, val);
+    }
+
+
+    print_forward(head,x,y);
+
+    return 0;
+}
