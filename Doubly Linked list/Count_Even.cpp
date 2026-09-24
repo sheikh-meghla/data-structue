@@ -14,7 +14,7 @@ public:
     }
 };
 
-void print_forward(Node* head,int x,int y) {
+void print_forward(Node* head) {
     Node* tmp = head;
     long long sum = 0;
     int count = 0;
@@ -48,8 +48,7 @@ void Insert_at_tail(Node* &head, Node* &tail, int val) {
 int main() {
     Node* head = NULL;
     Node* tail = NULL;
-    int x,y;
-    cin >> x >> y;
+
     int val;
 
     while (true) {
@@ -63,7 +62,7 @@ int main() {
     }
 
 
-    print_forward(head,x,y);
+    print_forward(head);
 
     return 0;
 }
