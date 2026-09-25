@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
     
-    list<int> l = {1,2,3,4,5};
+    list<int> l = {1,2,3,4,5,6,7,8};
     list<int> l3 = {7,8,9,1};
     list<int> l2;
     l2 = l;
@@ -17,7 +17,9 @@ int main() {
     // cout << *next(l2.begin(),2)<<endl;
     // l.insert(next(l2.begin(),2),100);
     // l.insert(next(l2.begin(),2),l3.begin(),l3.end());
-    l2.erase(next(l2.begin(),2));
+    // l2.erase(next(l2.begin(),2));
+    l2.erase(next(l2.begin(),2),next(l2.begin(),6));
+
     for(int val : l2){
         cout << val << " ";
     }
