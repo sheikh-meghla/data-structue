@@ -9,10 +9,11 @@ int main() {
     // l2.assign(l.begin(),l.end());
 
 
-    l2.push_back(6);
-    l2.push_front(0);
-    l2.pop_back();
-    l2.pop_front();
+    // l2.push_back(6);
+    // l2.push_front(0);
+    // l2.pop_back();
+    // l2.pop_front();
+    cout << *next(l2.begin(),2)<<endl;
     for(int val : l2){
         cout << val << " ";
     }
