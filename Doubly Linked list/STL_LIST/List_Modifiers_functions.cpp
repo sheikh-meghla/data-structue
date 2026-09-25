@@ -16,7 +16,8 @@ int main() {
     // l2.pop_front();
     // cout << *next(l2.begin(),2)<<endl;
     // l.insert(next(l2.begin(),2),100);
-    l.insert(next(l2.begin(),2),l3.begin(),l3.end());
+    // l.insert(next(l2.begin(),2),l3.begin(),l3.end());
+    l2.erase(next(l2.begin(),2));
     for(int val : l2){
         cout << val << " ";
     }
