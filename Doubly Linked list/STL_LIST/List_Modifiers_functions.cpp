@@ -13,7 +13,8 @@ int main() {
     // l2.push_front(0);
     // l2.pop_back();
     // l2.pop_front();
-    cout << *next(l2.begin(),2)<<endl;
+    // cout << *next(l2.begin(),2)<<endl;
+    l.insert(next(l2.begin(),2),100);
     for(int val : l2){
         cout << val << " ";
     }
