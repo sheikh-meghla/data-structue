@@ -11,6 +11,8 @@ int main() {
 
     l2.push_back(6);
     l2.push_front(0);
+    l2.pop_back();
+    l2.pop_front();
     for(int val : l2){
         cout << val << " ";
     }
